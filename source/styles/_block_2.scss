@@ -119,13 +119,13 @@
     }
   }
   &_bottom {
-    background: url(../images/block_2_bg.png) repeat-x;
+    background: url(../img/block_2_bg.png) repeat-x;
     background-size: cover;
     padding: 70px 0;
     position: relative;
     &_notebook {
       padding: 70px 0 80px;
-      background: url(../images/notebook_2.png) no-repeat center;
+      background: url(../img/notebook_2.png) no-repeat center;
       background-size: contain;
       display: flex;
       flex-direction: column;

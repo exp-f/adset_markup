@@ -59,9 +59,17 @@
         </form>
     </div>
 </div>
+<div class="cookie <?= (isset($_COOKIE['agree_cookie']) ? '' : 'show') ?>">
+    <p class="cookie_text">Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+        You can turn cookies off by changing your browser settings</p>
+    <div class="cookie_buttons">
+        <div class="btn btn-sm">Agree</div>
+        <a href="/privacy-policy/" class="cookie_link">More</a>
+    </div>
+</div>
 </main>
-<script type="text/javascript" src="<?php echo get_template_directory_uri()?>/js/index.js"></script>
-<?wp_footer();?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/js/index.js"></script>
+<? wp_footer(); ?>
 </body>
 </html>
 

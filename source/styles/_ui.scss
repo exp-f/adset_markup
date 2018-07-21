@@ -34,13 +34,18 @@
     background: $white;
     border: 1px solid $white;
   }
+  &-sm {
+    @extend .btn-t;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 
 @mixin bg-round($size, $type) {
   width: $size;
   height: $size;
   @if $type == 'dashed' {
-    background: url(../images/dashed-bg.png) repeat;
+    background: url(../img/dashed-bg.png) repeat;
   }
   @if $type == 'gradient' {
     background: $red-yellow-gradient-top;
@@ -117,7 +122,7 @@
     height: 790px;
     top: 0;
     right: 100px;
-    background: url(../images/contacts_shape_1.png) no-repeat top;
+    background: url(../img/contacts_shape_1.png) no-repeat top;
     @media (max-width: $tablet-bp) {
       top: 0;
       right: -60px;
@@ -223,7 +228,7 @@
     left: 15px;
     width: 32px;
     height: 32px;
-    background: url(../images/close.png);
+    background: url(../img/close.png);
     cursor: pointer;
   }
 }

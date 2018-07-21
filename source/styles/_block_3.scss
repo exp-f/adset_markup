@@ -1,7 +1,7 @@
 .block_3 {
   padding-top: 225px;
   padding-bottom: 225px;
-  background: url(../images/block_3_bg.png) no-repeat bottom;
+  background: url(../img/block_3_bg.png) no-repeat bottom;
   @media (max-width: $tablet-bp) {
     padding: 150px 40px 60px;
     background-size: 250% 70%;
@@ -78,7 +78,7 @@
     font-weight: 300;
     line-height: 1.5;
     &:before {
-      content: url(../images/quote.png);
+      content: url(../img/quote.png);
       display: block;
       margin-bottom: 30px;
     }

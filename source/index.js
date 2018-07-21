@@ -1,7 +1,37 @@
 import './styles/main.scss';
 
 
-require('./js/helpers');
+require('./scripts/helpers');
+
+const setCookie = (name, value, options) => {
+  options = options || {};
+
+  let expires = options.expires;
+
+  if (typeof expires === "number" && expires) {
+    let d = new Date();
+    d.setTime(d.getTime() + expires * 1000);
+    expires = options.expires = d;
+  }
+  if (expires && expires.toUTCString) {
+    options.expires = expires.toUTCString();
+  }
+
+  value = encodeURIComponent(value);
+
+  let updatedCookie = name + "=" + value;
+
+  for (let propName in options) {
+    if (!options.hasOwnProperty(propName)) continue;
+    updatedCookie += "; " + propName;
+    let propValue = options[propName];
+    if (propValue !== true) {
+      updatedCookie += "=" + propValue;
+    }
+  }
+  document.cookie = updatedCookie;
+};
+
 window.addEventListener('load', () => {
   document.body.classList.remove('preload');
   let bgs = document.querySelectorAll('.bg_item'),
@@ -105,5 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
       left: 0,
       behavior: 'smooth'
     });
+  });
+  document.querySelectorAll('.cookie .btn').on('click', (e) => {
+    document.querySelector('.cookie').classList.remove('show');
+    setCookie('agree_cookie', '1', {
+      expires: 24 * 60 * 60 * 60
+    })
   })
 });

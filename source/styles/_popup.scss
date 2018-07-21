@@ -146,7 +146,7 @@
     display: inline-block;
     margin-right: 10px;
     input:checked + & {
-      background: url(../images/ok.svg) $white center no-repeat;
+      background: url(../img/ok.svg) $white center no-repeat;
     }
   }
   &_error {
@@ -182,7 +182,7 @@
     right: -10%;
     width: 32px;
     height: 32px;
-    background: url(../images/close.png);
+    background: url(../img/close.png);
     cursor: pointer;
     @media (max-width: $tablet-bp) {
       top: -15%;

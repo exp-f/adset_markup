@@ -63,7 +63,7 @@ typings/
 .next
 static/
 .idea/
-js
-images
+/js
+/images
 
 style.css*

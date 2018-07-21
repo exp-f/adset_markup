@@ -1,0 +1,8 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="21px" height="21px">
+    <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 255, 255)" fill-opacity="0"
+          d="M3.500,3.500 L17.500,3.500 L17.500,17.500 L3.500,17.500 L3.500,3.500 Z"/>
+    <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+          d="M6.500,9.500 L8.500,9.500 L8.500,11.500 L6.500,11.500 L6.500,9.500 Z"/>
+</svg>
