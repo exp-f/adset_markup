@@ -1,0 +1,105 @@
+.block_1 {
+  padding-top: 200px;
+  @media (max-width: $tablet-bp) {
+    padding-top: 150px;
+  }
+  @media (max-width: $mobile-bp){
+    padding-top: 110px;
+  }
+  & > .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > * {
+      transition: $transition-commom;
+    }
+    @media (max-width: $tablet-bp){
+      width: 100%;
+      margin: 0;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: $mobile-bp){
+      padding: 0 20px;
+    }
+  }
+  &_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 calc(50% - 45px);
+    position: relative;
+    transition-delay: 0.1s;
+    @include animate();
+    @media (max-width: $tablet-bp) {
+      .btn {
+        display: none;
+      }
+    }
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      white-space: nowrap;
+      @media (max-width: $tablet-bp){
+        font-size: 51px;
+      }
+      @media (max-width: $mobile-bp){
+        font-size: 32px;
+        white-space: normal;
+        margin-bottom: 30px;
+      }
+    }
+    p{
+      font-weight: 300;
+      font-size: 40px;
+      margin-bottom: 80px;
+      @media (max-width: $tablet-bp){
+        font-size: 48px;
+      }
+      @media (max-width: $mobile-bp){
+        font-size: 22px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &_image {
+    flex: 0 0 calc(50% - 45px);
+    width: 100%;
+    position: relative;
+    transform: translateY(10px) translateX(50px);
+    transition-delay: 0.15s;
+    opacity: 0;
+    .show &{
+      opacity: 1;
+      transform: translateY(0) translateX(50px);
+    }
+    @media (max-width: $tablet-bp) {
+      display: flex;
+      justify-content: center;
+      transform: translateY(20px);
+      .show &{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: $mobile-bp){
+      align-items: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    &+.btn {
+      display: none;
+      @media (max-width: $tablet-bp) {
+        margin-top: 80px;
+        display: block;
+      }
+      @media (max-width: $mobile-bp){
+        margin-top: 50px;
+      }
+    }
+  }
+}

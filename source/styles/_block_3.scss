@@ -1,0 +1,86 @@
+.block_3 {
+  padding-top: 225px;
+  padding-bottom: 225px;
+  background: url(../images/block_3_bg.png) no-repeat bottom;
+  @media (max-width: $tablet-bp) {
+    padding: 150px 40px 60px;
+    background-size: 250% 70%;
+  }
+  @media (max-width: $mobile-bp) {
+    padding-bottom: 10px;
+  }
+  &_title {
+    @extend .block_2_title;
+    @media (max-width: $tablet-bp) {
+      margin-bottom: 60px;
+    }
+  }
+  &_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  &_item {
+    flex: 0 0 calc((100% / 3) - 15px);
+    padding: 45px;
+    background: $white;
+    filter: drop-shadow(1px 1px 16px rgba(179, 209, 224, 0.15));
+    &:nth-child(1) {
+      @include animate(0.1s);
+    }
+    &:nth-child(2) {
+      @include animate(0.15s);
+    }
+    &:nth-child(3) {
+      @include animate(0.2s);
+    }
+    &:nth-child(4) {
+      @include animate(0.25s);
+      display: none;
+      @media (max-width: $tablet-bp) {
+        display: block;
+      }
+    }
+    @media (max-width: $tablet-bp) {
+      flex: 0 0 calc(50% - 15px);
+      margin-bottom: 40px;
+    }
+    @media (max-width: $mobile-bp) {
+      flex: 0 0 100%;
+      padding: 45px 25px;
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+
+  }
+  &_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+    img {
+      margin-right: 30px;
+      max-width: 64px;
+      height: auto;
+    }
+  }
+  &_content {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    &:before {
+      content: url(../images/quote.png);
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+}

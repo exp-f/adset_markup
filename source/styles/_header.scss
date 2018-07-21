@@ -1,0 +1,112 @@
+header {
+  //desk
+  //max-width: $container-width;
+  //margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 25px calc((100% - #{$container-width}) / 2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: $transition-commom;
+  &.scrolled {
+    box-shadow: 0px 3px 7px 0px rgba(171, 175, 180, 0.73);
+    background: $white;
+    .btn-t {
+      @extend .btn-w;
+      border: 1px solid $red;
+    }
+    .hdr_sign_in {
+      color: $red;
+      svg {
+        path:nth-child(1) {
+          stroke: $red;
+        }
+        path:nth-child(2) {
+          fill: $red;
+        }
+      }
+    }
+  }
+  .hdr {
+    &_logo {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+    }
+    &_items {
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+      font-weight: 600;
+    }
+    &_link {
+      text-decoration: none;
+      color: $black;
+      margin-right: 15px;
+      transition: $transition-commom;
+      &:hover {
+        color: $red;
+      }
+    }
+    &_end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+    &_sign_in {
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+      color: $white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: $transition-commom;
+      * {
+        transition: $transition-commom;
+      }
+      &:hover {
+        color: $dark-red;
+        svg {
+          path:nth-child(1) {
+            stroke: $dark-red;
+          }
+          path:nth-child(2) {
+            fill: $dark-red;
+          }
+        }
+      }
+      svg {
+        margin-right: 10px;
+      }
+    }
+
+  }
+}
+
+.hdr {
+  &--desktop {
+    @media (max-width: $tablet-bp) {
+      display: none;
+    }
+  }
+  &--mobile {
+    display: none;
+    @media (max-width: $tablet-bp) {
+      display: flex;
+      justify-content: center;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  &_burger {
+    position: absolute;
+    align-self: center;
+    left: 15px;
+    cursor: pointer;
+  }
+}

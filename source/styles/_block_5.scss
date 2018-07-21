@@ -1,0 +1,117 @@
+.block_5 {
+  padding-top: 150px;
+  & > .wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $tablet-bp) {
+      padding: 0 5%;
+      overflow: hidden;
+    }
+    @media (max-width: $mobile-bp) {
+      overflow: auto;
+    }
+  }
+  h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    background: $red-yellow-gradient-right;
+    font-weight: 900;
+    letter-spacing: 12px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 80px;
+    @media (max-width: $tablet-bp){
+      font-size: 85px;
+      margin-bottom: 100px;
+    }
+    @media (max-width: $mobile-bp){
+      font-size: 37px;
+      margin-bottom: 60px;
+    }
+  }
+  strong {
+    max-width: 570px;
+    text-align: center;
+    margin: 0 auto 50px;
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: normal;
+  }
+  h3 {
+    font-size: 51px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    @media (max-width: $mobile-bp) {
+      font-size: 32px;
+    }
+  }
+  p{
+    margin-bottom: 30px;
+    line-height: 1.5;
+    & + .block_5_title {
+      margin-top: 80px;
+    }
+    @media (max-width: $mobile-bp) {
+      font-size: 17px;
+    }
+  }
+  a {
+    display: inline-block;
+    color: $red;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  table {
+    margin-bottom: 50px;
+    width: 150%;
+    border-collapse: collapse;
+    @media (max-width: $tablet-bp) {
+      width: 100%;
+    }
+    @media (max-width: $mobile-bp) {
+      overflow: scroll;
+      width: 220%;
+      align-self: flex-start;
+    }
+    $table_pad: 150px;
+    thead tr{
+      th:first-child {
+        white-space: nowrap;
+        padding-left: $table_pad;
+        text-align: left;
+      }
+      th:nth-child(2) {
+        padding-left: $table_pad;
+        text-align: left;
+      }
+      th:last-child {
+        text-align: left;
+        padding-left: $table_pad;
+      }
+    }
+    tbody tr {
+      font-size: 17px;
+      td:first-child {
+        padding-left: $table_pad;
+      }
+      td:nth-child(2) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: $table_pad;
+        line-height: 1.5;
+      }
+      td:last-child {
+        padding-right: $table_pad;
+        padding-left: $table_pad;
+      }
+    }
+    tbody tr:nth-child(2n) {
+      background: #f5fafe;
+    }
+  }
+}

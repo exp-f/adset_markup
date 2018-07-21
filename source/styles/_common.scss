@@ -1,0 +1,53 @@
+/*
+Theme Name: ADSET.IO
+Author: exp-f
+Description: Cool adset.io markup
+Version: 0.0.1
+*/
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: $base-font-size;
+  color: $black;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+@mixin animate($delay:0s) {
+  transition: $transition-commom;
+  transition-delay: $delay;
+  opacity: 0;
+  transform: translateY(20px);
+  .show & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@mixin animate-self($delay:0s) {
+  transition: $transition-commom;
+  transition-delay: $delay;
+  opacity: 0;
+  transform: translateY(20px);
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

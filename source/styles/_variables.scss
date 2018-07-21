@@ -1,0 +1,19 @@
+//sizes
+$base-font-size: 21px;
+$container-width: 1140px;
+$tablet-bp: 1024px;
+$mobile-bp: 480px;
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$red: #e5275b;
+$grey: #9b9b9b;
+$dark-red: #830528;
+$red-yellow-gradient-top: linear-gradient(0, $red 0%, #ffa673 69%);
+$red-yellow-gradient-right: linear-gradient(90deg, $red 0%, #ffa673 69%);
+$red-yellow-gradient-block-4: linear-gradient(90deg, $red 0%, #ffa673 100%);
+
+//transition
+
+$transition-commom: all 0.3s ease;

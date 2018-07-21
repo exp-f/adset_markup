@@ -1,0 +1,229 @@
+.btn {
+  font-size: 18px;
+  border-radius: 40px;
+  padding: 15px 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition: $transition-commom;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  &-t {
+    color: $white;
+    border: 1px solid $white;
+    background: transparent;
+    &:hover {
+      background: $white;
+      color: $red;
+      border-color: $white;
+    }
+  }
+  &-r {
+    color: $white;
+    background: $red-yellow-gradient-right;
+    border: 1px solid transparent;
+    background-size: 300%;
+    background-position: 0 50%;
+    &:hover {
+      background-position: 50% 50%;
+    }
+  }
+  &-w {
+    color: $red;
+    background: $white;
+    border: 1px solid $white;
+  }
+}
+
+@mixin bg-round($size, $type) {
+  width: $size;
+  height: $size;
+  @if $type == 'dashed' {
+    background: url(../images/dashed-bg.png) repeat;
+  }
+  @if $type == 'gradient' {
+    background: $red-yellow-gradient-top;
+  }
+
+}
+
+.bg_item {
+  position: absolute;
+  transform: translateY(var(--ty));
+  &--round {
+    border-radius: 100%;
+  }
+  &--1 {
+    right: -650px;
+    top: -859px;
+    z-index: -2;
+    @include bg-round(1435px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      @include bg-round(550px, 'gradient');
+      top: 370px;
+      right: -260px;
+    }
+    @media (max-width: $mobile-bp) {
+      @include bg-round(285px, 'gradient');
+      top: 290px;
+      right: -170px;
+    }
+  }
+  &--2 {
+    top: -250px;
+    right: -250px;
+    z-index: -1;
+    @include bg-round(500px, 'dashed');
+    @media (max-width: $tablet-bp) {
+      display: none;
+    }
+  }
+  &--3 {
+    z-index: -2;
+    top: -90px;
+    left: 100px;
+    @include bg-round(363px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      @include bg-round(175px, 'gradient');
+      top: -40px;
+      left: 60px;
+    }
+  }
+  &--4 {
+    z-index: -2;
+    bottom: -60px;
+    right: 250px;
+    @include bg-round(570px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      @include bg-round(300px, 'gradient');
+      top: 380px;
+      left: 300px;
+    }
+  }
+  &--5 {
+    z-index: -1;
+    top: 200px;
+    left: 270px;
+    @include bg-round(131px, 'dashed');
+    @media (max-width: $tablet-bp) {
+      top: 50px;
+      left: 20px;
+    }
+  }
+  &--6 {
+    z-index: -1;
+    width: 568px;
+    height: 790px;
+    top: 0;
+    right: 100px;
+    background: url(../images/contacts_shape_1.png) no-repeat top;
+    @media (max-width: $tablet-bp) {
+      top: 0;
+      right: -60px;
+    }
+  }
+  &--7 {
+    z-index: -2;
+    top: 1030px;
+    left: 80px;
+    @include bg-round(135px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      display: none;
+    }
+  }
+  &--8 {
+    z-index: -2;
+    top: 330px;
+    left: 120px;
+    @include bg-round(125px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      top: 220px;
+      left: -20px;
+    }
+    @media (max-width: $mobile-bp) {
+      top: 160px;
+      left: 10px;
+      @include bg-round(50px, 'gradient')
+    }
+  }
+  &--9 {
+    z-index: -2;
+    top: 180px;
+    left: 545px;
+    @include bg-round(21px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      top: 190px;
+      left: 163px;
+    }
+  }
+  &--10 {
+    z-index: 1;
+    top: 50px;
+    left: 875px;
+    @include bg-round(74px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      top: 50px;
+      left: 545px;
+    }
+    @media (max-width: $mobile-bp) {
+      top: 90px;
+      left: 295px;
+    }
+  }
+  &--11 {
+    z-index: -1;
+    top: 130px;
+    left: 1115px;
+    @include bg-round(51px, 'gradient');
+    @media (max-width: $tablet-bp) {
+      top: 130px;
+      left: 735px;
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: $red-yellow-gradient-top;
+  padding: 100px 0 90px;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  transform: translateX(-100vh);
+  @media (max-width: $tablet-bp) {
+    display: flex;
+    transition: $transition-commom;
+  }
+  @media (max-width: $mobile-bp) {
+    padding: 50px 0;
+  }
+  &.open {
+    transform: translateX(0);
+  }
+  &_items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_item {
+    font-size: 34px;
+    color: $white;
+    text-decoration: none;
+    margin-bottom: 55px;
+    line-height: 1;
+  }
+  &_close {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 32px;
+    height: 32px;
+    background: url(../images/close.png);
+    cursor: pointer;
+  }
+}

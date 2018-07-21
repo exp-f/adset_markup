@@ -1,0 +1,196 @@
+.request {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $red-yellow-gradient-right;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform-origin: center;
+  transform: rotateY(90deg);
+  pointer-events: none;
+  transition: $transition-commom;
+  padding: 50px 0 0;
+  overflow: scroll;
+  @media (max-width: $mobile-bp) {
+    justify-content: flex-start;
+    padding: 0;
+  }
+  &.open{
+    pointer-events: all;
+    transform: rotateY(0);
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 970px;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width: $tablet-bp) {
+      padding: 0 15px;
+    }
+    @media (max-width: $mobile-bp) {
+      padding: 50px 15px;
+      flex: 0 0 auto;
+    }
+  }
+  &_title {
+    font-size: 100px;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin-bottom: 60px;
+    @media (max-width: $tablet-bp) {
+      font-size: 59px;
+    }
+    @media (max-width: $mobile-bp) {
+      font-size: 27px;
+      letter-spacing: 5px;
+      margin-bottom: 40px;
+    }
+  }
+  &_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 auto;
+    padding-bottom: 50px;
+    @media (max-width: $tablet-bp) {
+      padding-bottom: 0;
+    }
+  }
+  &_row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    @media (max-width: $mobile-bp) {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+  }
+  &_item {
+    flex: 0 0 calc(50% - 45px);
+    position: relative;
+    &.valid > .request_label {
+      transform: translateY(-30px);
+      @media (max-width: $mobile-bp) {
+        transform: translateY(-30px);
+      }
+    }
+    @media (max-width: $mobile-bp) {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      font-size: 19px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $white !important;
+      color: $white !important;
+      padding: 25px 5px;
+      &:-webkit-autofill {
+        background-color: transparent !important;
+      }
+      &:focus + .request_label, &.valid > .request_label {
+        transform: translateY(-30px);
+      }
+      @media (max-width: $mobile-bp) {
+        padding: 15px 0;
+      }
+    }
+  }
+  &_label {
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    line-height: 1;
+    color: $white;
+    font-size: 14px;
+    opacity: 0.6;
+    transition: $transition-commom;
+  }
+  &_check {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    @media (max-width: $mobile-bp) {
+      margin: 20px 0;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    &_label {
+      color: $white;
+      font-size: 14px;
+      opacity: .6;
+      a {
+        color: inherit;
+        font-size: inherit;
+      }
+    }
+  }
+  &_checkbox {
+    width: 16px;
+    height: 16px;
+    background: $white;
+    display: inline-block;
+    margin-right: 10px;
+    input:checked + & {
+      background: url(../images/ok.svg) $white center no-repeat;
+    }
+  }
+  &_error {
+    position: absolute;
+    font-size: 14px;
+    padding: 20px 30px;
+    background: $white;
+    color: $red;
+    white-space: nowrap;
+    top: -170%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: $transition-commom;
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      background: $white;
+      top: calc(100% - 10px);
+      transform: rotate(45deg);
+      left: calc(50% - 10px);
+    }
+  }
+  &_close {
+    position: absolute;
+    top: 6.5%;
+    right: -10%;
+    width: 32px;
+    height: 32px;
+    background: url(../images/close.png);
+    cursor: pointer;
+    @media (max-width: $tablet-bp) {
+      top: -15%;
+      right: -5%;
+    }
+    @media (max-width: $mobile-bp) {
+      top: 2%;
+      right: 5%;
+    }
+  }
+}
