@@ -103,7 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.position = 'fixed';
     document.querySelector('.request').classList.add('open');
   });
-  document.querySelectorAll('.hdr_burger').on('click', () => {
+  document.querySelectorAll('.hdr_burger').on(['click', 'touch'], () => {
+    console.log('working');
     document.body.style.position = 'fixed';
     document.querySelector('.nav').classList.add('open');
   });

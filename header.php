@@ -52,7 +52,16 @@
         </div>
     </header>
     <header class="hdr--mobile">
-        <object class="hdr_burger" data="<?=get_template_directory_uri()?>/images/burger.svg" type="image/svg+xml"></object>
+        <svg class="hdr_burger"
+                xmlns="http://www.w3.org/2000/svg"
+                width="31px" height="22px">
+            <path fill-rule="evenodd"  fill="rgb(229, 39, 91)"
+                  d="M-0.000,-0.000 L31.000,-0.000 L31.000,2.000 L-0.000,2.000 L-0.000,-0.000 Z"/>
+            <path fill-rule="evenodd"  fill="rgb(229, 39, 91)"
+                  d="M-0.000,10.000 L31.000,10.000 L31.000,12.000 L-0.000,12.000 L-0.000,-0.000 Z"/>
+            <path fill-rule="evenodd"  fill="rgb(229, 39, 91)"
+                  d="M-0.000,20.000 L31.000,20.000 L31.000,22.000 L-0.000,22.000 L-0.000,-0.000 Z"/>
+        </svg>
         <a href="/">
             <img src="<?=get_template_directory_uri()?>/images/logo.png" alt="">
         </a>
