@@ -66,6 +66,7 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: $transition-commom;
+  z-index: 1;
   @media (max-width: $tablet-bp) {
     flex-direction: column;
     text-align: center;

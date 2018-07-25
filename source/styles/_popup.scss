@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   background: $red-yellow-gradient-right;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,7 +14,7 @@
   pointer-events: none;
   transition: $transition-commom;
   padding: 50px 0 0;
-  overflow: scroll;
+  overflow-y: scroll;
   @media (max-width: $mobile-bp) {
     justify-content: flex-start;
     padding: 0;
